@@ -1,5 +1,4 @@
 class Vector:
-
     def __init__(self, elements):
 
         self.length = len(elements)
@@ -7,10 +6,10 @@ class Vector:
 
     def get(self, index):
         return self.elements[index]
-    
+
     def __add__(self, vector):
-        #print("sum")
-        if (self.length != vector.length):
+        # print("sum")
+        if self.length != vector.length:
             return
 
         new_vector = []
@@ -21,8 +20,8 @@ class Vector:
         return Vector(new_vector)
 
     def __sub__(self, vector):
-        #print("sum")
-        if (self.length != vector.length):
+        # print("sum")
+        if self.length != vector.length:
             return
 
         new_vector = []
@@ -33,8 +32,8 @@ class Vector:
         return Vector(new_vector)
 
     def __mul__(self, vector):
-        if (self.length != vector.length):
-            return 
+        if self.length != vector.length:
+            return
 
         result = 0
         for i in range(self.length):
@@ -55,11 +54,10 @@ class Vector:
     def __and__(self, vector):
         new_vector = []
 
-        if (self.length != vector.length):
+        if self.length != vector.length:
             return
-        
+
         for i in range(self.length):
             new_vector.append(self.get(i) * vector.get(i))
 
         return Vector(new_vector)
-    
